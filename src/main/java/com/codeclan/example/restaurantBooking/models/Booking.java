@@ -13,10 +13,10 @@ public class Booking {
     private Long id;
 
     @Column(name = "date")
-    private Date date;
+    private String date;
 
     @Column(name= "start_time")
-    private Time startTime;
+    private String startTime;
 
     @Column(name = "duration")
     private int duration;
@@ -32,7 +32,7 @@ public class Booking {
     @JoinColumn(name = "customer_id", nullable = false)
     private Customer customer;
 
-    public Booking(Date date, Time startTime, EatingPlatform eatingPlatform, int numberOfGuests, Customer customer) {
+    public Booking(String date, String startTime, EatingPlatform eatingPlatform, int numberOfGuests, Customer customer) {
         this.date = date;
         this.startTime = startTime;
         this.duration = 1;
@@ -52,19 +52,19 @@ public class Booking {
         this.id = id;
     }
 
-    public Date getDate() {
+    public String getDate() {
         return date;
     }
 
-    public void setDate(Date date) {
+    public void setDate(String date) {
         this.date = date;
     }
 
-    public Time getStartTime() {
+    public String getStartTime() {
         return startTime;
     }
 
-    public void setStartTime(Time startTime) {
+    public void setStartTime(String startTime) {
         this.startTime = startTime;
     }
 

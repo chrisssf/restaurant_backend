@@ -102,4 +102,12 @@ public class Booking {
     public void setCustomer(Customer customer) {
         this.customer = customer;
     }
+
+    public Long getEatingPlatformId() {
+        return getEatingPlatform().getId();
+    }
+
+    public Long getCustomerId(){
+        return getCustomer().getId();
+    }
 }

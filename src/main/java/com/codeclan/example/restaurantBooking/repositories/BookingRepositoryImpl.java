@@ -34,4 +34,6 @@ public class BookingRepositoryImpl implements BookingRepositoryCustom{
         }
         return result;
     }
+
+
 }

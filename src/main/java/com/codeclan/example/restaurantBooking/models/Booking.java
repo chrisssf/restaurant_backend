@@ -1,5 +1,7 @@
 package com.codeclan.example.restaurantBooking.models;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 import javax.persistence.*;
 import java.sql.Time;
 import java.util.Date;
@@ -28,6 +30,7 @@ public class Booking {
     @Column(name = "number_of_guests")
     private int numberOfGuests;
 
+    @JsonIgnoreProperties("bookings")
     @ManyToOne
     @JoinColumn(name = "customer_id", nullable = false)
     private Customer customer;

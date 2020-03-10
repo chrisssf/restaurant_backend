@@ -1,6 +1,6 @@
 package com.codeclan.example.restaurantBooking.repositories;
 
-import com.codeclan.example.restaurantBooking.models.Booking;
+import com.codeclan.example.restaurantBooking.models.Customer;
 import org.hibernate.Criteria;
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
@@ -11,19 +11,19 @@ import javax.persistence.EntityManager;
 import javax.transaction.Transactional;
 import java.util.List;
 
-public class BookingRepositoryImpl implements BookingRepositoryCustom{
+public class CustomerRepositoryImpl implements CustomerRepositoryCustom {
 
     @Autowired
     EntityManager entityManager;
 
     @Transactional
-    public List<Booking> findBookingsByDate(String date){
-        List<Booking> result = null;
+    public List<Customer> findCustomersById(Long id){
+        List<Customer> result = null;
         Session session = entityManager.unwrap(Session.class);
 
         try {
-            Criteria cr = session.createCriteria(Booking.class);
-            cr.add(Restrictions.eq("date", date));
+            Criteria cr = session.createCriteria(Customer.class);
+            cr.add(Restrictions.eq("id", id));
 
             result = cr.list();
 
@@ -33,6 +33,5 @@ public class BookingRepositoryImpl implements BookingRepositoryCustom{
         }
         return result;
     }
-
 
 }

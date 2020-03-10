@@ -35,6 +35,12 @@ public class Booking {
     @JoinColumn(name = "customer_id", nullable = false)
     private Customer customer;
 
+    @Column(name = "has_arrived")
+    private Boolean hasArrived;
+
+    @Column(name = "has_left")
+    private Boolean hasLeft;
+
     public Booking(String date, String startTime, EatingPlatform eatingPlatform, int numberOfGuests, Customer customer) {
         this.date = date;
         this.startTime = startTime;
@@ -42,6 +48,8 @@ public class Booking {
         this.eatingPlatform = eatingPlatform;
         this.numberOfGuests = numberOfGuests;
         this.customer = customer;
+        this.hasArrived = false;
+        this.hasLeft = false;
     }
 
     public Booking() {
@@ -101,6 +109,22 @@ public class Booking {
 
     public void setCustomer(Customer customer) {
         this.customer = customer;
+    }
+
+    public Boolean getHasArrived() {
+        return hasArrived;
+    }
+
+    public void setHasArrived(Boolean hasArrived) {
+        this.hasArrived = hasArrived;
+    }
+
+    public Boolean getHasLeft() {
+        return hasLeft;
+    }
+
+    public void setHasLeft(Boolean hasLeft) {
+        this.hasLeft = hasLeft;
     }
 
     public Long getEatingPlatformId() {

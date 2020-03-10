@@ -14,6 +14,8 @@ public interface EmbedCustomerAndEatingPlatform {
     int getDuration();
     Customer getCustomer();
     EatingPlatform getEatingPlatform();
+    Boolean getHasArrived();
+    Boolean getHasLeft();
     Long getEatingPlatformId();
     Long getCustomerId();
 
